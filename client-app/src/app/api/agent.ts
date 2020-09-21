@@ -17,6 +17,7 @@ axios.interceptors.response.use(undefined, error => {
     if(status === 500){
         toast.error('Server error - Check the terminal for more info!');
     }
+    throw error;
 })
 
 axios.defaults.baseURL = 'http://localhost:5000/api';
