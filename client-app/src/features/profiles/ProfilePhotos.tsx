@@ -8,7 +8,7 @@ const ProfilePhotos = () => {
   const rootStore = useContext(RootStoreContext);
   const {
     profile,
-    isCurrentUSer,
+    isCurrentUser,
     uploadPhoto,
     uploadingPhoto,
     setMainPhoto,
@@ -30,7 +30,7 @@ const ProfilePhotos = () => {
       <Grid>
         <Grid.Column width={16} style={{ paddingBottom: 0 }}>
           <Header floated="left" icon="image" content="Photos" />
-          {isCurrentUSer && (
+          {isCurrentUser && (
             <Button
               floated="right"
               basic
@@ -51,7 +51,7 @@ const ProfilePhotos = () => {
                 profile.photos.map((photo) => (
                   <Card key={photo.id}>
                     <Image src={photo.url} />
-                    {isCurrentUSer && (
+                    {isCurrentUser && (
                       <Button.Group fluid widths={2}>
                         <Button
                           name={photo.id}
